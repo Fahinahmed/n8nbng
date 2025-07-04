@@ -8,8 +8,8 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=n8nadmin
 ENV N8N_BASIC_AUTH_PASSWORD=tumarStrongPassword123
 
-# Expose port (Render uses this)
-EXPOSE 5678
+# Ensure /home/node is the working directory
+WORKDIR /home/node
 
-# Default command
-CMD ["n8n"]
+# Run using explicit path to n8n binary
+CMD ["./node_modules/.bin/n8n"]
