@@ -1,4 +1,11 @@
-FROM n8nio/n8n:latest
+FROM n8nio/n8n
 
+ENV N8N_BASIC_AUTH_ACTIVE=true
+ENV N8N_BASIC_AUTH_USER=n8nadmin
+ENV N8N_BASIC_AUTH_PASSWORD=strongpassword123
 ENV GENERIC_TIMEZONE=Asia/Dhaka
+
+EXPOSE 5678
+
+ENTRYPOINT ["tini", "--"]
 CMD ["n8n"]
